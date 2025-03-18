@@ -1,47 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 body {
-    font-family: Poppins, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App h1 {
-    font-size: 24px;
-    padding: 10px 0 5px 100px;
+.App {
+  height: 100%; /* Full viewport height */
+  width: 100%; /* Full viewport width */
+  background-image: url("https://ambiq.com/wp-content/uploads/2023/08/smart-city-security-surveillance-1200x800-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures full coverage without stretching */
+  background-position: center;
+  position: relative;
 }
 
-hr {
-    color: #f1f3f4;
+.App::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for opacity */
+  backdrop-filter: blur(4px); /* Blurry effect */
+  z-index: 1; /* Ensures overlay is above background */
 }
 
-.main-container {
-    display: flex;
-    padding: 0 100px;
-    gap: 100px;
-    align-items: flex-start;
-    justify-content: space-between;
+.App .App2 {
+  position: relative; /* Ensures content appears above the overlay */
+  z-index: 2;
+  color: #fff; /* Text remains visible */
+  text-align: center;
+  padding: 20px;
 }
 
-.left {
-    width: 800px;
+.App .App2 h1 {
+  font-size: 28px;
+  padding: 0px 0 0px 10px;
 }
 
-.hero {
-    margin: 50px auto;
+.App2 .main-container {
+  padding: 0 50px;
+  gap: 40px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.hero h2 {
-    font-size: 26px;
-    margin-bottom: 20px;
+.App2 .left {
+  width: 100%;
 }
 
-.hero p  {
-    font-size: 16px;
+.App2 .hero {
+  margin-top: 40px;
+  background: linear-gradient(135deg, #dff6ff 0%, #ffffff 100%);
+  color: black;
+  padding: 16px;
+  flex: 1;
 }
 
-.upload input[type="file"] {
+.App2 .hero h2 {
+  font-size: 22px;
+  margin-bottom: 0px;
+}
+
+.App2 .hero p {
+  font-size: 16px;
+}
+
+.App2 .hero2 {
+  margin-top: 48px;
+  background: linear-gradient(135deg, #dff6ff 0%, #ffffff 100%);
+  color: black;
+  padding: 16px;
+  float: right;
+  flex: 1;
+}
+
+.App2 .hero2 h2 {
+  font-size: 22px;
+  margin-bottom: 0px;
+}
+
+.App2 .hero2 p {
+  font-size: 16px;
+}
+
+.App2 .upload input[type="file"] {
   margin: 10px 20px 20px 0;
   font-size: 16px;
   width: 50%;
@@ -50,82 +99,93 @@ hr {
   border-radius: 10px;
 }
 
-.upload, .result {
-    margin: auto;
-    margin-bottom: 50px;
+.App2 .upload,
+.App2 .result {
+  margin: auto;
+  margin-bottom: 20px;
 }
 
-.upload h2, .result h2 {
-    font-size: 24px;
+.App2 .upload h2,
+.App2 .result h2 {
+  font-size: 24px;
 }
 
-.upload p, .result p {
-    font-size: 16px;
+.App2 .upload p,
+.App2 .result p {
+  font-size: 16px;
+  color: black;
+  opacity: 0.2;
 }
 
-.upload button {
-    background: #000;
-    width: 53%;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.App2 .upload button {
+  background: linear-gradient(135deg, #dff6ff 0%, #ffffff 100%);
+  width: 24%;
+  color: black;
+  padding: 14px 0px 14px 0px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.loader {
-    font-size: 16px;
-    margin-top: 50px;
+.App2 .loader {
+  font-size: 16px;
+  margin-top: 50px;
+  opacity: 0.2;
+  color: black;
 }
 
-.result {
-    margin-top: 30px;
-    width: 50%;
-    height: 400px;
-    padding-left: 20px;
-    background-color: #f1f3f4;
-    border-radius: 10px;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+.App2 .result {
+  margin-top: 30px;
+  width: 50%;
+  height: 400px;
+  padding-left: 20px;
+  background: linear-gradient(135deg, #dff6ff 0%, #ffffff 100%);
+  border-radius: 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 
-.result .placeholder {
-    text-align: center;
-    margin: 130px 0;
-    font-size: 20px;
+.App2 .result .placeholder {
+  text-align: center;
+  margin: 130px 0;
+  font-size: 20px;
 }
 
-.result p span {
-    font-size: 40px;
+.App2 .result p span {
+  font-size: 40px;
+  color: black;
 }
 
-.result ul {
-    list-style: none;
-    padding-left: 20px;
+.App2 .result ul {
+  list-style: none;
+  padding-left: 20px;
+  color: black;
 }
 
-.result li {
-    font-size: 16px;
-    margin: 5px 0;
+.App2 .result li {
+  font-size: 16px;
+  margin: 5px 0;
+  color: black;
 }
 
 @media (max-width: 1024px) {
-    .main-container {
-        padding: 0 30px;
-        gap: 30px;
-    }
+  .App2 .main-container {
+    padding: 0 30px;
+    gap: 30px;
+  }
 
-    .upload button {
-        width: 90%;
-    }
+  .App2 .upload button {
+    width: 90%;
+  }
 
-    .upload input[type="file"] {
-        width: 85%;
-    }
+  .App2 .upload input[type="file"] {
+    width: 85%;
+  }
 
-    .result {
-        width: 80%;
-        padding: 20px;
-    }
+  .App2 .result {
+    width: 80%;
+    padding: 20px;
+  }
 }

@@ -1,5 +1,6 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 def fitness_function(C, g, x, c):
     a = (1 - (g / C)) ** 2
